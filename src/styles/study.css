@@ -1,0 +1,243 @@
+/**
+ * Study-specific styles
+ * Additional styles for study components
+ */
+
+/* PDF Uploader Styles */
+.pdf-uploader {
+  animation: fadeIn 0.5s ease;
+}
+
+/* Chapter Selector Styles */
+.chapter-selector {
+  animation: fadeIn 0.5s ease 0.2s backwards;
+}
+
+/* Theme Selector Styles */
+.theme-selector {
+  animation: fadeIn 0.5s ease 0.3s backwards;
+}
+
+/* Study Content Styles */
+.study-content {
+  animation: fadeIn 0.5s ease;
+}
+
+/* Loading Animation */
+.loading-animation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+/* AI Provider Status */
+.ai-provider-status {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  animation: slideIn 0.3s ease;
+}
+
+/* LaTeX Equation Styling */
+.katex {
+  font-size: 1.1em;
+}
+
+.katex-display {
+  margin: 1.5em 0;
+  text-align: center;
+}
+
+.latex-block {
+  background: var(--secondary-bg);
+  padding: 20px;
+  border-radius: 8px;
+  margin: 24px 0;
+  overflow-x: auto;
+}
+
+/* Dark mode LaTeX adjustments */
+@media (prefers-color-scheme: dark) {
+  .katex {
+    color: var(--text-primary);
+  }
+}
+
+/* Formula Card Styles */
+.formula-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 16px 0;
+  transition: all 0.3s ease;
+}
+
+.formula-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Problem Card Styles */
+.problem-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+}
+
+.problem-card .problem-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.problem-card .problem-solution {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Step-by-step solution */
+.solution-step {
+  margin: 12px 0;
+  padding: 12px;
+  background: var(--secondary-bg);
+  border-radius: 8px;
+  border-left: 3px solid var(--primary-color);
+}
+
+/* Study Dashboard Animations */
+.study-page {
+  animation: fadeIn 0.5s ease;
+}
+
+.pdf-card {
+  transition: all 0.3s ease;
+}
+
+.pdf-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Upload Page Transitions */
+.upload-page {
+  animation: fadeIn 0.5s ease;
+}
+
+.progress-steps .step {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.progress-steps .step.active {
+  transform: scale(1.05);
+}
+
+/* Results Page */
+.results-page {
+  animation: fadeIn 0.5s ease;
+}
+
+/* Empty State */
+.empty-state {
+  animation: fadeIn 0.5s ease;
+}
+
+/* Error State */
+.error-state {
+  animation: fadeIn 0.5s ease;
+  color: var(--text-secondary);
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .ai-provider-status {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .formula-card,
+  .problem-card {
+    padding: 16px;
+  }
+
+  .latex-block {
+    padding: 16px;
+    font-size: 0.9em;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .back-btn,
+  .header-actions,
+  .ai-provider-status,
+  .new-session-btn,
+  .pdf-actions {
+    display: none;
+  }
+
+  .study-content,
+  .problem-card,
+  .formula-card {
+    break-inside: avoid;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus Styles */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Custom Cursor for Draggable Elements */
+.dropzone {
+  cursor: pointer;
+}
+
+.dropzone.active {
+  cursor: copy;
+}
+
+/* Loading States */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--secondary-bg) 25%,
+    var(--border-color) 50%,
+    var(--secondary-bg) 75%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
